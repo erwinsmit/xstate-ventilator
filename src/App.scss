@@ -1,0 +1,109 @@
+.App {
+  text-align: center;
+  perspective: 600px;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+ 
+  }
+}
+
+
+@keyframes turning {
+  0% {
+    transform: rotate3d(0, 1, 0, 0deg);
+  }
+  20% {
+    transform: rotate3d(0, 1, 0, 60deg);
+  }
+  40% {
+    transform: rotate3d(0, 1, 0, 0deg);
+  }
+  60% {
+    transform: rotate3d(0, 1, 0, -60deg);
+  }
+  80% {
+    transform: rotate3d(0, 1, 0, 0deg);
+  }
+}
+
+.ventilator {
+  width: 300px;
+  height: 500px;
+  margin: 2em auto;
+  position: relative;
+  transform-origin: center;
+  transform-style: preserve-3d;
+  
+  &--turning {
+    animation: turning infinite 2s linear;
+  }
+
+  .svg {
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    path:first-child {
+      opacity: 0;
+    }
+
+    &__inner {
+      top: 40px;
+      left: 85px;
+      width: 130px;
+      height: 130px;
+      transform-origin: center;
+      position: absolute;
+    }
+  }
+
+  &--running {
+    .svg__inner {
+      animation: App-logo-spin infinite 2s linear;
+    }
+
+    &.ventilator--mediumSpeed {
+      .svg__inner {
+        animation-duration: 1s;
+      }
+    }
+
+    &.ventilator--highSpeed {
+      .svg__inner {
+        animation-duration: 0.5s;
+      }
+    }
+  }
+}
