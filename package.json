@@ -12,10 +12,10 @@
     "@types/react-dom": "^16.9.6",
     "@xstate/react": "^0.8.1",
     "classnames": "^2.2.6",
-    "node-sass": "^4.13.1",
+    "node-sass": "^9.0.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-scripts": "3.4.1",
+    "react-scripts": "5.0.1",
     "typescript": "^3.7.5",
     "xstate": "^4.9.1"
   },
